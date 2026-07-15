@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kavya Beauty Salon | Luxury Skincare, Hair & Bridal</title>
+    <!-- Google Fonts: Elegant Serif Playfair Display + Clean Sans Outfit -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Style Sheets -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Soft Floral Background Circles -->
+    <div class="decor-circle circle-1"></div>
+    <div class="decor-circle circle-2"></div>
+
+    <!-- Header Navigation -->
+    <header class="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">
+                Kavya <span class="logo-sub">Beauty Salon</span>
+            </a>
+            
+            <nav class="nav-links">
+                <a href="#services" class="nav-link">Our Services</a>
+                <a href="#products" class="nav-link">Retail Products</a>
+                <a href="#booking" class="nav-link">Book Appointment</a>
+            </nav>
+
+            <div class="nav-actions">
+                <button class="cart-trigger-btn" id="cart-btn" title="Open Shopping Cart">
+                    <i class="fa-solid fa-bag-shopping"></i> Bag <span class="cart-count" id="cart-badge">0</span>
+                </button>
+                <button class="dashboard-toggle-btn" id="dashboard-toggle" title="Open Owner Dashboard">
+                    <i class="fa-solid fa-sliders"></i> Owner Dashboard
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Banner Section -->
+        <section class="hero-section">
+            <div class="hero-content">
+                <span class="hero-tagline">Rejuvenate Your Natural Radiance</span>
+                <h1 class="hero-title">Experience Premium <br><span class="accent-text">Beauty & Luxury Care</span></h1>
+                <p class="hero-desc">Indulge in customizable treatments designed to refresh your skin, revitalize your hair, and unleash your inner glow. Tailored care crafted with passion.</p>
+                <div class="hero-buttons">
+                    <a href="#booking" class="btn btn-primary">Book Consultation</a>
+                    <a href="#services" class="btn btn-secondary">Explore Services</a>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="hero-image-frame">
+                    <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?w=800&auto=format&fit=crop&q=60" alt="Beautiful Salon Interior" class="hero-img">
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section class="services-section" id="services">
+            <div class="section-header">
+                <h2 class="section-title">Salon Services</h2>
+                <p class="section-subtitle">Choose from our curated wellness and grooming procedures</p>
+                
+                <!-- Category Filters -->
+                <div class="services-filter">
+                    <button class="filter-btn active" data-category="all">All Services</button>
+                    <button class="filter-btn" data-category="hair">Hair Care</button>
+                    <button class="filter-btn" data-category="skin">Skin & Facials</button>
+                    <button class="filter-btn" data-category="nails">Manicure & Nails</button>
+                    <button class="filter-btn" data-category="bridal">Bridal & Makeup</button>
+                </div>
+            </div>
+
+            <!-- Dynamic Services Grid -->
+            <div class="services-grid" id="services-grid">
+                <!-- Populated by JS -->
+            </div>
+        </section>
+
+        <!-- Products Section -->
+        <section class="products-section" id="products">
+            <div class="section-header">
+                <h2 class="section-title">Premium Salon Products</h2>
+                <p class="section-subtitle">Take the luxury home with professional-grade formulations</p>
+            </div>
+
+            <!-- Dynamic Products Grid -->
+            <div class="products-grid" id="products-grid">
+                <!-- Populated by JS -->
+            </div>
+        </section>
+
+        <!-- Booking Section -->
+        <section class="booking-section" id="booking">
+            <div class="booking-container">
+                <div class="booking-info">
+                    <h2>Schedule a Glow Session</h2>
+                    <p>Select your desired date, time, and service. Our beauty experts will contact you within 2 hours to confirm your booking.</p>
+                    <div class="info-list">
+                        <div class="info-item"><i class="fa-solid fa-phone"></i> +1 (555) 789-2244</div>
+                        <div class="info-item"><i class="fa-solid fa-clock"></i> Mon - Sat: 9:00 AM - 7:00 PM</div>
+                        <div class="info-item"><i class="fa-solid fa-map-pin"></i> 452 Elegance Ave, Suite B</div>
+                    </div>
+                </div>
+                
+                <!-- Appointment Booking Form -->
+                <form class="booking-form" id="appointment-form">
+                    <div class="form-row">
+                        <div class="input-group">
+                            <label for="book-name">Your Name</label>
+                            <input type="text" id="book-name" placeholder="Enter full name" required>
+                        </div>
+                        <div class="input-group">
+                            <label for="book-phone">Phone Number</label>
+                            <input type="tel" id="book-phone" placeholder="Enter contact number" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="input-group">
+                            <label for="book-service">Choose Service</label>
+                            <select id="book-service">
+                                <!-- Populated dynamically by JS -->
+                            </select>
+                        </div>
+                        <div class="input-group">
+                            <label for="book-date">Preferred Date</label>
+                            <input type="date" id="book-date" required>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary w-100">Send Booking Request</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2026 Kavya Beauty Salon. Designed for natural radiance.</p>
+        </div>
+    </footer>
+
+    <!-- Shopping Cart Drawer -->
+    <div class="cart-overlay-salon" id="cart-overlay-salon"></div>
+    <div class="cart-drawer-salon" id="cart-drawer-salon">
+        <div class="cart-header-salon">
+            <h3>Your Shopping Bag (<span id="cart-count-drawer-salon">0</span>)</h3>
+            <button class="close-cart-btn-salon" id="close-cart-btn-salon"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+        <div class="cart-items-salon" id="cart-items-container-salon">
+            <!-- Dynamically populated -->
+        </div>
+        <div class="cart-summary-salon">
+            <div class="summary-row-salon">
+                <span>Subtotal</span>
+                <span id="cart-subtotal-salon">$0.00</span>
+            </div>
+            <div class="summary-row-salon">
+                <span>Shipping & Service</span>
+                <span style="color:var(--success)">Free</span>
+            </div>
+            <hr style="border:0; height:1px; background:var(--card-border); margin:15px 0;">
+            <div class="summary-row-salon total-row-salon">
+                <span>Total</span>
+                <span id="cart-total-salon">$0.00</span>
+            </div>
+            <button class="btn btn-primary w-100" id="checkout-btn-salon">Proceed to Purchase</button>
+        </div>
+    </div>
+
+    <!-- ==============================================
+         MOM-FRIENDLY SALON OWNER DASHBOARD (MODAL DRAWER)
+         ============================================== -->
+    <div class="dashboard-overlay" id="dashboard-overlay"></div>
+    <div class="dashboard-panel" id="dashboard-panel">
+        <div class="dashboard-header">
+            <h3><i class="fa-solid fa-spa"></i> Salon Manager Dashboard</h3>
+            <button class="close-dashboard-btn" id="close-dashboard" title="Close Panel">
+                <i class="fa-solid fa-xmark"></i> Close
+            </button>
+        </div>
+
+        <!-- Help Info Banner -->
+        <div class="dashboard-help-banner">
+            <i class="fa-solid fa-circle-info"></i>
+            <div>
+                <strong>Hello!</strong> Here you can add new services/products, edit prices, or delete items. Changes save automatically!
+            </div>
+        </div>
+
+        <div class="dashboard-tabs">
+            <button class="tab-btn active" id="tab-services-btn">Manage Services</button>
+            <button class="tab-btn" id="tab-products-btn">Manage Products</button>
+        </div>
+
+        <!-- Tab 1: Services Panel -->
+        <div class="tab-content-panel active" id="panel-services">
+            <!-- Form to Add/Edit Service -->
+            <form class="admin-form" id="service-form">
+                <h4 id="service-form-title">Add New Salon Service</h4>
+                <input type="hidden" id="edit-service-id" value="">
+                
+                <div class="input-group">
+                    <label for="srv-name">Service Name</label>
+                    <input type="text" id="srv-name" placeholder="e.g. Lavender Hydrating Facial" required>
+                </div>
+
+                <div class="form-row-admin">
+                    <div class="input-group">
+                        <label for="srv-category">Category</label>
+                        <select id="srv-category">
+                            <option value="hair">Hair Care</option>
+                            <option value="skin">Skin & Facials</option>
+                            <option value="nails">Manicure & Nails</option>
+                            <option value="bridal">Bridal & Makeup</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <label for="srv-price">Price ($)</label>
+                        <input type="number" id="srv-price" placeholder="e.g. 50" min="0" step="0.01" required>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label for="srv-desc">Short Description</label>
+                    <input type="text" id="srv-desc" placeholder="e.g. Includes soothing organic mask and facial massage" required>
+                </div>
+
+                <!-- Image Uploader / Choice -->
+                <div class="image-uploader-section">
+                    <label>Product/Service Image</label>
+                    
+                    <!-- Option A: File Upload (Mom-Friendly Auto Base64) -->
+                    <div class="file-upload-wrapper">
+                        <i class="fa-solid fa-camera upload-icon"></i>
+                        <span>Upload photo from computer/phone</span>
+                        <input type="file" id="srv-file-upload" accept="image/*">
+                    </div>
+                    
+                    <!-- Preview Image -->
+                    <div class="image-upload-preview" id="srv-image-preview-container">
+                        <img id="srv-image-preview" src="" alt="Selected preview" style="display:none;">
+                        <input type="hidden" id="srv-image-data" value="">
+                    </div>
+
+                    <!-- Option B: Select from Preset Icons/Photos -->
+                    <div class="presets-container">
+                        <span>Or click a pre-made photo to select:</span>
+                        <div class="preset-images-grid" id="srv-presets-grid">
+                            <!-- Populated dynamically by JS -->
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-actions-admin">
+                    <button type="submit" class="btn btn-primary" id="save-service-btn">Create Service</button>
+                    <button type="button" class="btn btn-secondary" id="cancel-service-edit-btn" style="display:none;">Cancel Edit</button>
+                </div>
+            </form>
+
+            <hr class="panel-divider">
+
+            <!-- List of Current Services with Edit/Delete Controls -->
+            <h4>Current Services List</h4>
+            <div class="admin-items-list" id="admin-services-list">
+                <!-- Dynamic Items Lists -->
+            </div>
+        </div>
+
+        <!-- Tab 2: Products Panel -->
+        <div class="tab-content-panel" id="panel-products">
+            <!-- Form to Add/Edit Product -->
+            <form class="admin-form" id="product-form">
+                <h4 id="product-form-title">Add New Retail Product</h4>
+                <input type="hidden" id="edit-product-id" value="">
+
+                <div class="input-group">
+                    <label for="prod-name">Product Name</label>
+                    <input type="text" id="prod-name" placeholder="e.g. Organic Argan Conditioner" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="prod-price">Price ($)</label>
+                    <input type="number" id="prod-price" placeholder="e.g. 24.99" min="0" step="0.01" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="prod-desc">Short Description</label>
+                    <input type="text" id="prod-desc" placeholder="e.g. Hydrates and restores hair shine" required>
+                </div>
+
+                <!-- Image Selection -->
+                <div class="image-uploader-section">
+                    <label>Product Image</label>
+                    
+                    <div class="file-upload-wrapper">
+                        <i class="fa-solid fa-camera upload-icon"></i>
+                        <span>Upload photo from computer/phone</span>
+                        <input type="file" id="prod-file-upload" accept="image/*">
+                    </div>
+                    
+                    <div class="image-upload-preview" id="prod-image-preview-container">
+                        <img id="prod-image-preview" src="" alt="Selected preview" style="display:none;">
+                        <input type="hidden" id="prod-image-data" value="">
+                    </div>
+
+                    <div class="presets-container">
+                        <span>Or click a pre-made photo to select:</span>
+                        <div class="preset-images-grid" id="prod-presets-grid">
+                            <!-- Populated dynamically by JS -->
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-actions-admin">
+                    <button type="submit" class="btn btn-primary" id="save-product-btn">Create Product</button>
+                    <button type="button" class="btn btn-secondary" id="cancel-product-edit-btn" style="display:none;">Cancel Edit</button>
+                </div>
+            </form>
+
+            <hr class="panel-divider">
+
+            <!-- List of Current Products -->
+            <h4>Current Products List</h4>
+            <div class="admin-items-list" id="admin-products-list">
+                <!-- Dynamic Items Lists -->
+            </div>
+        </div>
+
+        <div class="dashboard-footer">
+            <button class="reset-defaults-btn" id="reset-defaults" title="Restore original salon configuration">
+                <i class="fa-solid fa-rotate-left"></i> Restore Salon Original Data
+            </button>
+        </div>
+    </div>
+
+    <!-- Product Details Modal -->
+    <div class="modal-overlay-salon" id="product-modal-overlay-salon"></div>
+    <div class="modal-salon glass" id="product-modal-salon">
+        <button class="modal-close-salon" id="close-product-modal-salon"><i class="fa-solid fa-xmark"></i></button>
+        <div class="modal-content-grid-salon" id="modal-product-details-salon">
+            <!-- Dynamically populated -->
+        </div>
+    </div>
+
+    <!-- Checkout Modal -->
+    <div class="modal-overlay-salon" id="checkout-modal-overlay-salon"></div>
+    <div class="modal-salon glass checkout-modal-salon" id="checkout-modal-salon">
+        <button class="modal-close-salon" id="close-checkout-modal-salon"><i class="fa-solid fa-xmark"></i></button>
+        
+        <div class="checkout-wizard-salon">
+            <div class="checkout-steps-salon">
+                <div class="step-indicator-salon active" id="checkout-step-1">1. Delivery</div>
+                <div class="step-indicator-salon" id="checkout-step-2">2. Payment</div>
+                <div class="step-indicator-salon" id="checkout-step-3">3. Done</div>
+            </div>
+
+            <!-- Step 1: Shipping Info -->
+            <form id="shipping-form-salon" class="checkout-step-panel-salon active">
+                <h3>Delivery Address</h3>
+                <div class="input-group">
+                    <label for="ship-name-salon">Full Name</label>
+                    <input type="text" id="ship-name-salon" placeholder="Jane Doe" required>
+                </div>
+                <div class="input-group">
+                    <label for="ship-email-salon">Email Address</label>
+                    <input type="email" id="ship-email-salon" placeholder="jane@example.com" required>
+                </div>
+                <div class="input-group">
+                    <label for="ship-address-salon">Shipping Address</label>
+                    <input type="text" id="ship-address-salon" placeholder="789 Orchid St, Apt 4" required>
+                </div>
+                <div class="input-row">
+                    <div class="input-group">
+                        <label for="ship-city-salon">City</label>
+                        <input type="text" id="ship-city-salon" placeholder="San Francisco" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="ship-zip-salon">ZIP Code</label>
+                        <input type="text" id="ship-zip-salon" placeholder="94102" required>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary w-100 mt-20">Continue to Payment</button>
+            </form>
+
+            <!-- Step 2: Payment Details -->
+            <form id="payment-form-salon" class="checkout-step-panel-salon">
+                <h3>Payment Details</h3>
+                <div class="card-logo-row-salon">
+                    <i class="fa-brands fa-cc-visa" style="color:#1a1f71"></i>
+                    <i class="fa-brands fa-cc-mastercard" style="color:#eb001b"></i>
+                    <i class="fa-brands fa-cc-amex" style="color:#007bc1"></i>
+                </div>
+                <div class="input-group">
+                    <label for="pay-card-salon">Card Number</label>
+                    <input type="text" id="pay-card-salon" placeholder="4111 2222 3333 4444" pattern="\d{16}" title="16-digit card number" required>
+                </div>
+                <div class="input-row">
+                    <div class="input-group">
+                        <label for="pay-expiry-salon">Expiry Date</label>
+                        <input type="text" id="pay-expiry-salon" placeholder="MM/YY" pattern="\d{2}/\d{2}" title="MM/YY format" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="pay-cvv-salon">CVV</label>
+                        <input type="password" id="pay-cvv-salon" placeholder="123" pattern="\d{3,4}" title="3 or 4 digit CVV" required>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary w-100 mt-20">Confirm Order</button>
+            </form>
+
+            <!-- Step 3: Success Panel -->
+            <div id="success-panel-salon" class="checkout-step-panel-salon text-center">
+                <div class="success-checkmark-wrapper-salon">
+                    <div class="checkmark-circle-salon">
+                        <div class="checkmark-salon draw-salon"></div>
+                    </div>
+                </div>
+                <h3>Order Confirmed!</h3>
+                <p>Thank you for shopping at Kavya Beauty Salon. Your premium skincare products are being hand-packed. Order ID: <strong id="order-id-salon">#KAV-29401</strong></p>
+                <button class="btn btn-primary w-100 mt-20" id="success-close-salon">Back to Shop</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notifications Wrapper -->
+    <div class="toast-container" id="toast-container"></div>
+
+    <!-- Scripts -->
+    <script src="app.js"></script>
+</body>
+</html>
